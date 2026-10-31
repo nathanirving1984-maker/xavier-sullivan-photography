@@ -6,25 +6,27 @@
    ========================================================= */
 const PROPERTIES = [
   {
-    title: "Property One",          // e.g. "Indian Valley Retreat"
-    location: "Novato, California", // neighborhood / town
+    title: "Marin County Residence",  // e.g. "Indian Valley Retreat"
+    location: "Marin County, California",
     folder: "property-1",
-    count: 12
+    count: 18
   },
   {
     title: "Property Two",
     location: "Marin County, California",
     folder: "property-2",
-    count: 12
+    count: 0   // set to the photo count once photos are added
   }
 ];
 
 const pad = n => String(n).padStart(2, "0");
 const srcFor = (p, i) => `images/${p.folder}/${pad(i + 1)}.jpg`;
-const SHOWN = 7; // tiles shown per property; the rest open in the lightbox
+const thumbFor = (p, i) => `images/${p.folder}/thumbs/${pad(i + 1)}.jpg`;
+const SHOWN = 9; // tiles shown per property; the rest open in the lightbox
 
 const wrap = document.getElementById("properties");
 PROPERTIES.forEach((p, pi) => {
+  if (!p.count) return;
   const el = document.createElement("article");
   el.className = "property reveal";
   const tiles = [];
@@ -33,7 +35,7 @@ PROPERTIES.forEach((p, pi) => {
       ? `<span class="more">+${p.count - SHOWN + 1} photos</span>` : "";
     tiles.push(
       `<button data-p="${pi}" data-i="${i}" aria-label="Open photo ${i + 1} of ${p.title}">
-         <div class="ph" style="--img:url('${srcFor(p, i)}')"></div>${extra}
+         <div class="ph" style="--img:url('${thumbFor(p, i)}')"></div>${extra}
        </button>`
     );
   }
