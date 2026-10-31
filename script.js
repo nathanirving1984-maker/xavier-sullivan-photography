@@ -7,9 +7,9 @@
 const PROPERTIES = [
   {
     title: "10 Pebble Beach",
-    location: "Marin County, California",
+    location: "Novato, California",
     folder: "property-1",
-    count: 28
+    count: 38
   },
   {
     title: "Property Two",
