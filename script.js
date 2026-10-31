@@ -6,10 +6,10 @@
    ========================================================= */
 const PROPERTIES = [
   {
-    title: "Marin County Residence",  // e.g. "Indian Valley Retreat"
+    title: "10 Pebble Beach",
     location: "Marin County, California",
     folder: "property-1",
-    count: 18
+    count: 28
   },
   {
     title: "Property Two",
