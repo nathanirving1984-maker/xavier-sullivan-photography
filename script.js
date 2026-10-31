@@ -12,10 +12,10 @@ const PROPERTIES = [
     count: 38
   },
   {
-    title: "Property Two",
-    location: "Marin County, California",
+    title: "12 Bermuda Harbor",
+    location: "Bel Marin Keys, Novato",
     folder: "property-2",
-    count: 0   // set to the photo count once photos are added
+    count: 15
   }
 ];
 
